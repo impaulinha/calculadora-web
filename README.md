@@ -1,70 +1,126 @@
-# Getting Started with Create React App
+<h1 align="center">
+  🖩 <a href="#" alt="Nome do Projeto">CALCULADORA WEB</a> 🖩
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img alt="Tamanho do repositório" src="https://img.shields.io/github/repo-size/impaulinha/calculadora-web">
+  <img alt="Licença" src="https://img.shields.io/github/license/impaulinha/calculadora-web">
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/impaulinha/calculadora-web">
+</p>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📑 Índice
 
-### `npm start`
+<p align="center">
+  <a href="#-sobre">📌 Sobre</a> • 
+  <a href="#-layout">📸 Layout</a> • 
+  <a href="#️-tecnologias">🛠️ Tecnologias</a> • 
+  <a href="#-como-executar">🚀 Como executar</a> • 
+  <a href="#-licença">📝 Licença</a> • 
+  <a href="#-autora">👩🏻‍💻 Autora</a>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📌 Sobre
 
-### `npm test`
+A **Calculadora Web** foi desenvolvida como parte de um desafio técnico do curso de **React** da [DIO](https://www.dio.me/). O projeto foca na criação de uma ferramenta funcional e estética, utilizando conceitos de estilização e linguagem de programação abordados durante as aulas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+O projeto foi desenvolvido para consolidar conhecimentos em React, Javascript e CSS usando CSS-in-JS (Styled Components).
 
-### `npm run build`
+Funcionalidades:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 🔢 **Operações Matemáticas:**
+  - Realiza as quatro operações básicas (soma, subtração, multiplicação e divisão).
+  - Suporte para cálculo de porcentagem e números decimais.
+  - Função "Backspace" (⌫) para correção de dígitos e "AC" para reset total.
+- 📈 **Visor Inteligente (Display):**
+  - Exibição da equação completa (ex: 10 + 5 =) na parte superior do visor para melhor feedback ao usuário.
+  - Formatação dinâmica de números para evitar quebras de layout.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📸 Layout
 
-### `npm run eject`
+Abaixo o layout da aplicação:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| App 
+| :-- 
+<img width="227" height="499" alt="print-calculadora" src="https://github.com/user-attachments/assets/03c392d0-5a0c-4439-9e8f-e459c0f294ae" />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛠️ Tecnologias
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+As seguintes tecnologias foram utilizadas no projeto:
 
-## Learn More
+- [React](https://react.dev/)
+- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Styled-components](https://styled-components.com/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Como executar
 
-### Code Splitting
+### 📋 Pré-requisitos
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+É necessário que você tenha instalado em sua máquina:
 
-### Analyzing the Bundle Size
+- [Node](https://nodejs.org/en/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Você pode seguir o passo a passo disponível na [documentação](https://reactjs.org/) do ReactJS, onde há instruções que vão desde a instalação dos pré-requisitos até a execução do aplicativo.
 
-### Making a Progressive Web App
+### ⚙️ Rodando o aplicativo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Se já possui todos os pré-requisitos instalados, siga os seguintes comandos:
 
-### Advanced Configuration
+```bash
+# Clone este repositório
+$ git clone https://github.com/impaulinha/calculadora-web.git
+# Acesse a pasta do projeto 
+$ cd calculadora-web
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Para rodar, você pode utilizar o NPM ou YARN:
 
-### Deployment
+### `NPM`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+``` bash
+# Instala as dependências necessárias
+$ npm install
+# Executa a aplicação
+$ npm start
+```
 
-### `npm run build` fails to minify
+### `YARN`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+``` bash
+# Instala as dependências necessárias
+$ yarn install
+# Executa a aplicação
+$ yarn start
+```
+
+A aplicação será aberta na porta:3000. 
+
+> Acesse http://localhost:3000 em seu navegador para visualizá-la.
+
+---
+
+## 📝 Licença
+
+Este projeto esta sob a licença [MIT](./LICENSE).
+
+---
+
+## 👩🏻‍💻 Autora
+
+Feito com ❤️ e dedicação por Ana Paula 😊. Entre em contato 👇
+
+[![Linkedin Badge](https://img.shields.io/badge/-Paulinha-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/anapaula-aguiar/)
+[![Gmail Badge](https://img.shields.io/badge/-anaaguiar20016@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:anaaguiar20016@gmail.com)
+
+- **Ana Paula Aguiar** - _Desenvolvedora Mobile_ - [impaulinha](anapaulaaguiar.dev)
+
+---
