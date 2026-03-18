@@ -1,9 +1,9 @@
 import { InputContainer } from './styles';
 
-export function Input({ value }) {
+export function Input({ value, equation }) {
   return (
     <InputContainer>
-      <input disabled className="input-prev" value="3 x 4 =" />
+      <input disabled className="input-prev" value={equation} />
       <input disabled value={value} className="input-current" />
     </InputContainer>
   );

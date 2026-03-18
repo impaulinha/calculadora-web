@@ -1,10 +1,4 @@
-import {
-  Container,
-  ContainerButtons,
-  Content,
-  Row,
-  WaveContainer,
-} from './styles';
+import { Container, ContainerButtons, Content, WaveContainer } from './styles';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { useState } from 'react';
@@ -13,11 +7,13 @@ export function Calculator() {
   const [currentNumber, setCurrentNumber] = useState('0');
   const [firstNumber, setFirstNumber] = useState('0');
   const [operation, setOperation] = useState('');
+  const [equation, setEquation] = useState('');
 
-  function handleClear() {
+  function handleClearAll() {
     setCurrentNumber('0');
     setFirstNumber('0');
     setOperation('');
+    setEquation('');
   }
 
   function handleAddNumber(number) {
@@ -27,11 +23,13 @@ export function Calculator() {
   function handleSumNumbers() {
     if (firstNumber === '0') {
       setFirstNumber(String(currentNumber));
+      setEquation(`${currentNumber} +`);
       setCurrentNumber('0');
       setOperation('+');
     } else {
       const sum = Number(firstNumber) + Number(currentNumber);
       setCurrentNumber(String(sum));
+      setEquation('');
     }
   }
 
@@ -39,11 +37,64 @@ export function Calculator() {
     if (firstNumber === '0') {
       setFirstNumber(String(currentNumber));
       setCurrentNumber('0');
+      setEquation(`${currentNumber} -`);
       setOperation('-');
     } else {
       const rem = Number(firstNumber) - Number(currentNumber);
       setCurrentNumber(String(rem));
+      setEquation('');
     }
+  }
+
+  function handleDivNumbers() {
+    if (firstNumber === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+      setEquation(`${currentNumber} ÷`);
+      setOperation('÷');
+    } else {
+      const rem = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(rem));
+      setEquation('');
+    }
+  }
+
+  function handleMultNumbers() {
+    if (firstNumber === '0') {
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+      setEquation(`${currentNumber} x`);
+      setOperation('x');
+    } else {
+      const rem = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(rem));
+      setEquation('');
+    }
+  }
+
+  function handlePercentNumbers() {
+    if (firstNumber === '0') {
+      setCurrentNumber(String(Number(currentNumber) / 100));
+    } else {
+      const result = (Number(firstNumber) * Number(currentNumber)) / 100;
+      setEquation(`${firstNumber} ${operation} ${currentNumber}% =`);
+      setCurrentNumber(String(result));
+      setFirstNumber('0');
+      setOperation('');
+    }
+  }
+
+  function handleAddDot() {
+    if (!currentNumber.includes('.')) {
+      setCurrentNumber((prev) => `${prev}.`);
+    }
+  }
+
+  function handleDelete() {
+    setCurrentNumber((prev) => {
+      if (prev.length <= 1) return '0';
+      return prev.slice(0, -1);
+    });
   }
 
   function handleEquals() {
@@ -55,16 +106,23 @@ export function Calculator() {
         case '-':
           handleRemNumbers();
           break;
+        case '÷':
+          handleDivNumbers();
+          break;
+        case 'x':
+          handleMultNumbers();
+          break;
         default:
           break;
       }
+      setEquation(`${firstNumber} ${operation} ${currentNumber} =`);
     }
   }
 
   return (
     <Container>
       <Content>
-        <Input value={currentNumber} />
+        <Input value={currentNumber} equation={equation} />
 
         <WaveContainer>
           <svg viewBox="0 0 320 64" preserveAspectRatio="none">
@@ -81,18 +139,10 @@ export function Calculator() {
         </WaveContainer>
 
         <ContainerButtons>
-          <Button label="AC" type="ac" onClick={() => handleAddNumber('*')} />
-          <Button
-            label="/"
-            type="operator"
-            onClick={() => handleAddNumber('/')}
-          />
-          <Button label="C" type="operator" onClick={handleClear} />
-          <Button
-            label="x"
-            type="operator"
-            onClick={() => handleAddNumber('')}
-          />
+          <Button label="AC" type="ac" onClick={handleClearAll} />
+          <Button label="÷" type="operator" onClick={handleDivNumbers} />
+          <Button label="x" type="operator" onClick={handleMultNumbers} />
+          <Button label="⌫" type="operator" onClick={handleDelete} />
 
           <Button
             label="7"
@@ -144,23 +194,15 @@ export function Calculator() {
             onClick={() => handleAddNumber('3')}
           />
 
-          <Button label="=" className="btn-equals" />
+          <Button label="=" className="btn-equals" onClick={handleEquals} />
 
-          <Button
-            label="%"
-            type="number"
-            onClick={() => handleAddNumber('1')}
-          />
+          <Button label="%" type="number" onClick={handlePercentNumbers} />
           <Button
             label="0"
             type="number"
-            onClick={() => handleAddNumber('2')}
+            onClick={() => handleAddNumber('0')}
           />
-          <Button
-            label="."
-            type="number"
-            onClick={() => handleAddNumber('3')}
-          />
+          <Button label="." type="number" onClick={handleAddDot} />
         </ContainerButtons>
       </Content>
     </Container>
