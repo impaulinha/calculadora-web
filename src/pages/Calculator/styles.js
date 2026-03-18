@@ -31,12 +31,16 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   background-color: var(--white);
-  min-height: 60%;
+  //min-height: 60%;
   width: 80%;
+  max-width: 500px;
   z-index: 2;
   position: relative;
   border-radius: 30px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  height: auto;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const WaveContainer = styled.div`

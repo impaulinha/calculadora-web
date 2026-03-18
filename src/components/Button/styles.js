@@ -11,6 +11,7 @@ export const ButtonContainer = styled.button`
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
 
   &.operator {
     color: var(--purple);
@@ -25,5 +26,14 @@ export const ButtonContainer = styled.button`
   &.ac {
     color: var(--peach);
     font-weight: 900;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: var(--btnHover);
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 `;
